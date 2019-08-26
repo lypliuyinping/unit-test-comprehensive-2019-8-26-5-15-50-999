@@ -86,4 +86,15 @@ class LibraryTest {
             Thread.sleep(100);
         });
     }
+    
+    @Test
+    void exceptionTesting() {
+        Throwable exception = assertThrows(IllegalArgumentException.class, () -> {
+            throw new IllegalArgumentException("a message");
+        });
+        Assertions.assertEquals("a message", exception.getMessage());
+    }
+    
+    
+    
 }
